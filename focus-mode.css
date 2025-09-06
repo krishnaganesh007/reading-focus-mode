@@ -19,28 +19,138 @@
   visibility: hidden !important;
 }
 
-/* Reading mode styles */
-.reading-focus-mode {
-  /* Change font to Helvetica */
+/* Hide newsletter signup boxes and subscription prompts */
+.reading-focus-mode [class*="newsletter"],
+.reading-focus-mode [id*="newsletter"],
+.reading-focus-mode [class*="subscribe"],
+.reading-focus-mode [id*="subscribe"],
+.reading-focus-mode [class*="signup"],
+.reading-focus-mode [id*="signup"],
+.reading-focus-mode [class*="subscription"],
+.reading-focus-mode [id*="subscription"],
+.reading-focus-mode [class*="email-signup"],
+.reading-focus-mode [id*="email-signup"],
+.reading-focus-mode [class*="mailing-list"],
+.reading-focus-mode [id*="mailing-list"],
+.reading-focus-mode [class*="opt-in"],
+.reading-focus-mode [id*="opt-in"],
+.reading-focus-mode .newsletter-box,
+.reading-focus-mode .subscribe-box,
+.reading-focus-mode .signup-box,
+.reading-focus-mode .subscription-box,
+.reading-focus-mode .email-capture,
+.reading-focus-mode .lead-magnet {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide YouTube videos and embedded media */
+.reading-focus-mode iframe[src*="youtube.com"],
+.reading-focus-mode iframe[src*="youtu.be"],
+.reading-focus-mode iframe[src*="vimeo.com"],
+.reading-focus-mode iframe[src*="dailymotion.com"],
+.reading-focus-mode iframe[src*="twitch.tv"],
+.reading-focus-mode iframe[src*="facebook.com/plugins/video"],
+.reading-focus-mode iframe[src*="instagram.com"],
+.reading-focus-mode iframe[src*="tiktok.com"],
+.reading-focus-mode [class*="youtube"],
+.reading-focus-mode [id*="youtube"],
+.reading-focus-mode [class*="video"],
+.reading-focus-mode [id*="video"],
+.reading-focus-mode .video-container,
+.reading-focus-mode .media-container,
+.reading-focus-mode .embed-container,
+.reading-focus-mode .video-embed,
+.reading-focus-mode .youtube-embed,
+.reading-focus-mode .vimeo-embed {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide social media widgets and sharing buttons */
+.reading-focus-mode [class*="social"],
+.reading-focus-mode [id*="social"],
+.reading-focus-mode [class*="share"],
+.reading-focus-mode [id*="share"],
+.reading-focus-mode [class*="follow"],
+.reading-focus-mode [id*="follow"],
+.reading-focus-mode .social-widget,
+.reading-focus-mode .share-widget,
+.reading-focus-mode .social-buttons,
+.reading-focus-mode .share-buttons,
+.reading-focus-mode .social-media,
+.reading-focus-mode .social-links,
+.reading-focus-mode .follow-buttons {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide popups, modals, and overlays */
+.reading-focus-mode [class*="popup"],
+.reading-focus-mode [id*="popup"],
+.reading-focus-mode [class*="modal"],
+.reading-focus-mode [id*="modal"],
+.reading-focus-mode [class*="overlay"],
+.reading-focus-mode [id*="overlay"],
+.reading-focus-mode [class*="lightbox"],
+.reading-focus-mode [id*="lightbox"],
+.reading-focus-mode .popup-container,
+.reading-focus-mode .modal-container,
+.reading-focus-mode .overlay-container {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide cookie notices and GDPR banners */
+.reading-focus-mode [class*="cookie"],
+.reading-focus-mode [id*="cookie"],
+.reading-focus-mode [class*="gdpr"],
+.reading-focus-mode [id*="gdpr"],
+.reading-focus-mode [class*="consent"],
+.reading-focus-mode [id*="consent"],
+.reading-focus-mode [class*="banner"],
+.reading-focus-mode [id*="banner"],
+.reading-focus-mode .cookie-notice,
+.reading-focus-mode .gdpr-banner,
+.reading-focus-mode .consent-banner,
+.reading-focus-mode .privacy-notice {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Remove font changes - keep original fonts */
+/* .reading-focus-mode {
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
 }
 
 .reading-focus-mode * {
   font-family: inherit !important;
-}
+} */
 
-/* Widen content for better reading */
+/* Widen content for better reading - use full width */
 .reading-focus-mode article,
 .reading-focus-mode main,
 .reading-focus-mode .content,
 .reading-focus-mode .post-content,
 .reading-focus-mode .entry-content,
 .reading-focus-mode .article-body,
-.reading-focus-mode .story-body {
+.reading-focus-mode .story-body,
+.reading-focus-mode .article-content,
+.reading-focus-mode .post-body,
+.reading-focus-mode .entry-body {
   max-width: none !important;
-  width: 90% !important;
-  margin: 0 auto !important;
+  width: 100% !important;
+  margin: 0 !important;
   padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Make the body and html use full width */
+.reading-focus-mode {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Improve text readability */
@@ -108,15 +218,33 @@ html.reading-theme-paper {
   --reading-border-color: #e6ddd1;
 }
 
-/* Apply theme colors */
+/* Apply theme colors with proper inversion */
 .reading-focus-mode {
   background-color: var(--reading-bg-color) !important;
   color: var(--reading-text-color) !important;
 }
 
-.reading-focus-mode * {
+/* Ensure all text elements use the theme colors properly */
+.reading-focus-mode p,
+.reading-focus-mode div,
+.reading-focus-mode span,
+.reading-focus-mode h1,
+.reading-focus-mode h2,
+.reading-focus-mode h3,
+.reading-focus-mode h4,
+.reading-focus-mode h5,
+.reading-focus-mode h6,
+.reading-focus-mode li,
+.reading-focus-mode td,
+.reading-focus-mode th,
+.reading-focus-mode article,
+.reading-focus-mode main,
+.reading-focus-mode section,
+.reading-focus-mode blockquote,
+.reading-focus-mode pre,
+.reading-focus-mode code {
+  color: var(--reading-text-color) !important;
   background-color: transparent !important;
-  color: inherit !important;
 }
 
 .reading-focus-mode a {
@@ -132,27 +260,44 @@ html.reading-theme-paper {
 /* Medium */
 .reading-focus-mode .meteredContent {
   max-width: none !important;
+  width: 100% !important;
 }
 
 /* Wikipedia */
 .reading-focus-mode #mw-content-text {
   max-width: none !important;
+  width: 100% !important;
 }
 
 /* Reddit */
 .reading-focus-mode .Post {
   max-width: none !important;
+  width: 100% !important;
 }
 
 /* GitHub */
 .reading-focus-mode .markdown-body {
   max-width: none !important;
+  width: 100% !important;
 }
 
 /* News sites */
 .reading-focus-mode .article-wrap,
 .reading-focus-mode .story-wrap {
   max-width: none !important;
+  width: 100% !important;
+}
+
+/* Aeon.co specific adjustments */
+.reading-focus-mode .article-content,
+.reading-focus-mode .article-body,
+.reading-focus-mode .content-body,
+.reading-focus-mode .post-content,
+.reading-focus-mode .entry-content {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 20px !important;
 }
 
 /* Remove fixed positioning that might interfere */
